@@ -10,7 +10,7 @@
 ################################
 # SOLUTION
 # Your Solution Score:
-# 50029
+# 50055
 ################################
 
 # Reading the input text file.
@@ -38,26 +38,26 @@ def calculate_score(rounds):
     final_score = 0   # keeping the final score as 0 for now to add later on.
     for shape, result in rounds:
         if shape == "A":   # the shape is rock
-            if result == "X":   # the result is to lose 
-                final_score += 1   # 1+0 = 1. Therefore score 1 is added
-            elif result == "Y":   # the result is draw
-                final_score += 4   # 1+3 = 4. Therefore score 4 is added
-            else:   # the result is win
-                final_score += 7   # 1+6 = 7. Therefore score 7 is added
-        elif shape == "B":   # the shape is paper
-            if result == "X":   # the result is to lose
-                final_score += 2   # 2+0 = 2. Therefore score 2 is added
-            elif result == "Y":   # the result is draw
-                final_score += 5   # 2+3 = 5. Therefore score 5 is added
-            else:   # the result is to win
-                final_score += 8   # 2+6 = 8. Therefore score 8 is added
-        else:   # the shape is scissor
-            if result == "X":   # the result is to lose
+            if result == "X":   # the result is to lose. I need to show scissor.
                 final_score += 3   # 3+0 = 3. Therefore score 3 is added
-            elif result == "Y":   # the result is draw
-                final_score += 6   # 3+3 = 6. Therefore score 6 is added
-            else:   # the result is to win
+            elif result == "Y":   # the result is draw. I need to show rock
+                final_score += 4   # 1+3 = 4. Therefore score 4 is added
+            else:   # the result is win. I need to show paper
+                final_score += 8   # 2+6 = 8. Therefore score 8 is added
+        elif shape == "B":   # the shape is paper
+            if result == "X":   # the result is to lose. I need to show rock
+                final_score += 1   # 1+0 = 1. Therefore score 1 is added
+            elif result == "Y":   # the result is draw. I need to show paper
+                final_score += 5   # 2+3 = 5. Therefore score 5 is added
+            else:   # the result is to win. I need to show scissor
                 final_score += 9   # 3+6 = 9. Therefore score 9 is added
+        else:   # the shape is scissor
+            if result == "X":   # the result is to lose. I need to show paper
+                final_score += 2   # 2+0 = 2. Therefore score 2 is added
+            elif result == "Y":   # the result is draw. I need to show scissor
+                final_score += 6   # 3+3 = 6. Therefore score 6 is added
+            else:   # the result is to win. I need to show rock
+                final_score += 7   # 1+6 = 7. Therefore score 7 is added
     return final_score
 
 given_file = "input_1_cap1.txt"  #replacing the file with input_1_cap1.txt
